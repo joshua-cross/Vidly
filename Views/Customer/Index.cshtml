@@ -13,13 +13,18 @@
             <th>Customers</th>
         </tr>
 
+        @{
+            int i = 0;
+        }
+
         @*For each movie that we have created in the Movies Controller for index.*@
         @foreach (var customer in Model.Customers)
         {
             //displaying each movie to the screen.
             <tr>
-                <td>@customer.Name</td>
+                <td>@Html.ActionLink(@customer.Name, "Detail", "Customer", new { id = i }, null)</td>
             </tr>
+            i++;
         }
 
     </table>

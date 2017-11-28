@@ -10,7 +10,6 @@ namespace Vidly.Controllers
     public class MoviesController : Controller
     {
 
-        List<Movie> movies;
 
         // GET: Movies/Random
         public ViewResult Random()
@@ -41,22 +40,12 @@ namespace Vidly.Controllers
         public ActionResult Index(int? pageIndex, string sortBy)
         {
 
-            //creating a new list for some movies (the Movie Model).
-            movies = new List<Movie>
-            {
-                
-                new Movie { Name = "Shrek!", Id = 1 },
-                new Movie { Name = "Wall-E", Id = 2 },
-                new Movie { Name = "Dawn of the Dead", Id = 3 },
-                new Movie { Name = "Frozen", Id = 4 }
-                
-            };
 
             //setting the MovieViewModel to be the movies we have created here.
             var viewModel = new MoviesViewModel
             {
 
-                Movies = movies
+                Movies = getMovies()
 
             };
 
@@ -86,13 +75,13 @@ namespace Vidly.Controllers
             try
             {
                 var movie = new Movie();
-                movie = movies[id];
+                movie = getMovies()[id];
                 return View(movie);
             }
             catch
             {
                 //getting the movie based on the id we was given.
-                return View();
+                return HttpNotFound();
             }
         }
         
@@ -104,5 +93,23 @@ namespace Vidly.Controllers
             return Content(year + "/" + month);
         }
         
+
+        //creating a new function that creates a list of movies, and then returns it.
+        public List<Movie> getMovies()
+        {
+            //creating a new list for some movies (the Movie Model).
+            var movies = new List<Movie>
+            {
+
+                new Movie { Name = "Shrek!", Id = 1 },
+                new Movie { Name = "Wall-E", Id = 2 },
+                new Movie { Name = "Dawn of the Dead", Id = 3 },
+                new Movie { Name = "Frozen", Id = 4 }
+
+            };
+
+            return movies;
+        }
+
     }
 }

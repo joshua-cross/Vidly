@@ -13,14 +13,18 @@
             @*TR = row in case I forgot.*@
             <th>Movies</th>
         </tr>
+        @{
+            int i = 0;
+        }
 
         @*For each movie that we have created in the Movies Controller for index.*@
         @foreach (var movie in Model.Movies)
         {
             //displaying each movie to the screen.
             <tr>
-                <td>@movie.Name</td>
+                <td>@Html.ActionLink(@movie.Name, "Details", "Movies", new { id = i }, null)</td>
             </tr>
+            i++;
         }
 
     </table>
