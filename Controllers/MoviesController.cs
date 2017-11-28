@@ -9,6 +9,9 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+
+        List<Movie> movies;
+
         // GET: Movies/Random
         public ViewResult Random()
         {
@@ -33,8 +36,31 @@ namespace Vidly.Controllers
             return Content("id = " + id);
         }
 
+        //routing so we can reach this page by simply doing /Movie.
+        [Route("Movie")]
         public ActionResult Index(int? pageIndex, string sortBy)
         {
+
+            //creating a new list for some movies (the Movie Model).
+            movies = new List<Movie>
+            {
+                
+                new Movie { Name = "Shrek!", Id = 1 },
+                new Movie { Name = "Wall-E", Id = 2 },
+                new Movie { Name = "Dawn of the Dead", Id = 3 },
+                new Movie { Name = "Frozen", Id = 4 }
+                
+            };
+
+            //setting the MovieViewModel to be the movies we have created here.
+            var viewModel = new MoviesViewModel
+            {
+
+                Movies = movies
+
+            };
+
+            /*
             //if page index does not have a value intitialise it to 1.
             if(!pageIndex.HasValue)
             {
@@ -46,14 +72,37 @@ namespace Vidly.Controllers
                 sortBy = "Name";
 
             }
+            */
 
-            return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+            //setting the view to be the view model.
+            return View(viewModel);
         }
 
+        
+        //routing to Movie/Detail/ID.
+        [Route("Movie/Details/{id}")]
+        public ActionResult details(int id)
+        {
+            try
+            {
+                var movie = new Movie();
+                movie = movies[id];
+                return View(movie);
+            }
+            catch
+            {
+                //getting the movie based on the id we was given.
+                return View();
+            }
+        }
+        
+
+        
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
         }
+        
     }
 }

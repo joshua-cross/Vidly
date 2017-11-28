@@ -1,0 +1,33 @@
+﻿@model Vidly.ViewModels.Customers.CustomerViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Customers.Count > 0)
+{
+    @*Creating a table that will hold all the movies from the Controller.*@
+    <table class=“table table­‐bordered table­‐hover”>
+        <tr>
+            @*TR = row in case I forgot.*@
+            <th>Customers</th>
+        </tr>
+
+        @*For each movie that we have created in the Movies Controller for index.*@
+        @foreach (var customer in Model.Customers)
+        {
+            //displaying each movie to the screen.
+            <tr>
+                <td>@customer.Name</td>
+            </tr>
+        }
+
+    </table>
+}
+    @*else we have got an empty array so we are going to print a message telling the user the lsit is empty.*@
+else
+{
+    <p>There are currently no customers, come back again!</p>
+}
+
+

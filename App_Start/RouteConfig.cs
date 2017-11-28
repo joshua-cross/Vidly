@@ -13,7 +13,13 @@ namespace Vidly
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapMvcAttributeRoutes();
+            try
+            {
+                routes.MapMvcAttributeRoutes();
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
             routes.MapRoute(
                 name: "Default",
