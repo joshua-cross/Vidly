@@ -5,4 +5,10 @@
 }
 
 <h2>@Model.Name</h2>
+<p>@Model.MembershipType.DiscountName</p>
+
+@if (Model.DOB != null)
+{
+    <p>@Model.DOB.Value.ToShortDateString()</p>
+}
 

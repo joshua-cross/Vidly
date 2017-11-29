@@ -247,6 +247,22 @@
     <Compile Include="Migrations\201711291448230_PopulatingDiscountName.Designer.cs">
       <DependentUpon>201711291448230_PopulatingDiscountName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711291500188_AddedDOBToCustomer.cs" />
+    <Compile Include="Migrations\201711291500188_AddedDOBToCustomer.Designer.cs">
+      <DependentUpon>201711291500188_AddedDOBToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291501178_AddedDOBToCustomer1.cs" />
+    <Compile Include="Migrations\201711291501178_AddedDOBToCustomer1.Designer.cs">
+      <DependentUpon>201711291501178_AddedDOBToCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291504357_addedFormatToDOB.cs" />
+    <Compile Include="Migrations\201711291504357_addedFormatToDOB.Designer.cs">
+      <DependentUpon>201711291504357_addedFormatToDOB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291505525_addedFormatToDOB1.cs" />
+    <Compile Include="Migrations\201711291505525_addedFormatToDOB1.Designer.cs">
+      <DependentUpon>201711291505525_addedFormatToDOB1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -371,6 +387,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711291448230_PopulatingDiscountName.resx">
       <DependentUpon>201711291448230_PopulatingDiscountName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291500188_AddedDOBToCustomer.resx">
+      <DependentUpon>201711291500188_AddedDOBToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291501178_AddedDOBToCustomer1.resx">
+      <DependentUpon>201711291501178_AddedDOBToCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291504357_addedFormatToDOB.resx">
+      <DependentUpon>201711291504357_addedFormatToDOB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291505525_addedFormatToDOB1.resx">
+      <DependentUpon>201711291505525_addedFormatToDOB1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

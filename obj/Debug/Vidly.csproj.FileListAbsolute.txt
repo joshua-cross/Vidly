@@ -92,3 +92,7 @@ C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.
 C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
 C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddedDiscountNameToMembershipType.resources
 C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulatingDiscountName.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddedDOBToCustomer.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddedDOBToCustomer1.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addedFormatToDOB.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addedFormatToDOB1.resources
