@@ -80,3 +80,9 @@ c:\users\josh\documents\visual studio 2015\Projects\Vidly\Vidly\bin\Microsoft.Ow
 c:\users\josh\documents\visual studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 c:\users\josh\documents\visual studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 c:\users\josh\documents\visual studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.Cache
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel1.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel2.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel3.resources
+C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel4.resources
