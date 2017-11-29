@@ -5,15 +5,39 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels.Customers;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class CustomerController : Controller
     {
+
+        private ApplicationDbContext _context;
+
+        public CustomerController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customer
         [Route("Customers")]
         public ActionResult Index()
         {
+
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+
+            try
+            {
+                List<Customer> customerList = new List<Customer>();
+            } catch
+            {
+
+            }
 
             //setting the view model to be the list of customers we just made.
             var viewModel = new CustomerViewModel
@@ -23,7 +47,7 @@ namespace Vidly.Controllers
 
 
 
-            return View(viewModel);
+            return View(customers);
         }
 
 
@@ -34,7 +58,7 @@ namespace Vidly.Controllers
             try
             {
                 var customer = new Customer();
-                customer = getCustomers()[id];
+                customer = _context.Customers.SingleOrDefault(c => c.Id == id);
                 return View(customer);
             } catch
             {

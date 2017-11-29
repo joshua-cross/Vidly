@@ -223,11 +223,36 @@
     <Compile Include="Migrations\201711291232146_InitialModel4.Designer.cs">
       <DependentUpon>201711291232146_InitialModel4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711291307062_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201711291307062_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201711291307062_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291312175_AddMembershipTpye.cs" />
+    <Compile Include="Migrations\201711291312175_AddMembershipTpye.Designer.cs">
+      <DependentUpon>201711291312175_AddMembershipTpye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291315551_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201711291315551_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201711291315551_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291329138_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201711291329138_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201711291329138_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291430527_AddedDiscountNameToMembershipType.cs" />
+    <Compile Include="Migrations\201711291430527_AddedDiscountNameToMembershipType.Designer.cs">
+      <DependentUpon>201711291430527_AddedDiscountNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291448230_PopulatingDiscountName.cs" />
+    <Compile Include="Migrations\201711291448230_PopulatingDiscountName.Designer.cs">
+      <DependentUpon>201711291448230_PopulatingDiscountName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -328,6 +353,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711291232146_InitialModel4.resx">
       <DependentUpon>201711291232146_InitialModel4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291307062_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201711291307062_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291312175_AddMembershipTpye.resx">
+      <DependentUpon>201711291312175_AddMembershipTpye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291315551_PopulateMembershipTypes.resx">
+      <DependentUpon>201711291315551_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291329138_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201711291329138_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291430527_AddedDiscountNameToMembershipType.resx">
+      <DependentUpon>201711291430527_AddedDiscountNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291448230_PopulatingDiscountName.resx">
+      <DependentUpon>201711291448230_PopulatingDiscountName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
