@@ -5,11 +5,23 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
 
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext(); 
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         // GET: Movies/Random
         public ViewResult Random()
@@ -41,6 +53,8 @@ namespace Vidly.Controllers
         {
 
 
+            var movies = _context.Movies.Include(c => c.Genre).ToList(); ;
+
             //setting the MovieViewModel to be the movies we have created here.
             var viewModel = new MoviesViewModel
             {
@@ -64,7 +78,7 @@ namespace Vidly.Controllers
             */
 
             //setting the view to be the view model.
-            return View(viewModel);
+            return View(movies);
         }
 
         
@@ -75,7 +89,7 @@ namespace Vidly.Controllers
             try
             {
                 var movie = new Movie();
-                movie = getMovies()[id];
+                movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
                 return View(movie);
             }
             catch

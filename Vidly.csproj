@@ -263,9 +263,18 @@
     <Compile Include="Migrations\201711291505525_addedFormatToDOB1.Designer.cs">
       <DependentUpon>201711291505525_addedFormatToDOB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711291528141_AddedNewElementsToMovies.cs" />
+    <Compile Include="Migrations\201711291528141_AddedNewElementsToMovies.Designer.cs">
+      <DependentUpon>201711291528141_AddedNewElementsToMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291533223_PopulateMovies.cs" />
+    <Compile Include="Migrations\201711291533223_PopulateMovies.Designer.cs">
+      <DependentUpon>201711291533223_PopulateMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -399,6 +408,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711291505525_addedFormatToDOB1.resx">
       <DependentUpon>201711291505525_addedFormatToDOB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291528141_AddedNewElementsToMovies.resx">
+      <DependentUpon>201711291528141_AddedNewElementsToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291533223_PopulateMovies.resx">
+      <DependentUpon>201711291533223_PopulateMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,28 +1,30 @@
-﻿@model Vidly.ViewModels.MoviesViewModel
+﻿@model IEnumerable<Vidly.Models.Movie>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*Only print the table if we have movies.*@
-@if (Model.Movies.Count > 0)
+@if (Model.Any())
 {
     @*Creating a table that will hold all the movies from the Controller.*@
     <table class=“table table­‐bordered table­‐hover”>
         <tr>
             @*TR = row in case I forgot.*@
             <th>Movies</th>
+            <th>Genre</th>
         </tr>
         @{
-            int i = 0;
+            int i = 1;
         }
 
         @*For each movie that we have created in the Movies Controller for index.*@
-        @foreach (var movie in Model.Movies)
+        @foreach (var movie in Model)
         {
             //displaying each movie to the screen.
             <tr>
                 <td>@Html.ActionLink(@movie.Name, "Details", "Movies", new { id = i }, null)</td>
+                <td>@movie.Genre.Name</td>
             </tr>
             i++;
         }

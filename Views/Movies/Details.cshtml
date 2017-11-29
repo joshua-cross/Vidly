@@ -6,6 +6,11 @@
 @try
 {
     <h2>@Model.Name </h2>
+    <p>Genre: @Model.Genre.Name</p>
+    <p>Release Date: @Model.ReleaseDate.ToShortDateString()</p>
+    <p>Date added to database @Model.DateAddedToDatabase.ToShortDateString()</p>
+    <p>Stock: @Model.Stock</p>
+
 }
 catch (Exception e)
 {
