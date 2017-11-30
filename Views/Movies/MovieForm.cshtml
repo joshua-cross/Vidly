@@ -4,7 +4,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>MovieForm</h2>
+
+@*Checking if we're adding a new element or editing an existing element.*@
+@try
+{
+
+    if (Model.Movies.Name.Equals("") || Model.Movies.Name.Equals(null))
+    {
+        <h2>Adding Movie</h2>
+    } else
+    {
+        <h2>Editing Movie</h2>
+    }
+}
+
+catch {
+
+    <h2>Adding Movie</h2>
+}
 
 @* Using the using as the Html form is disposable, and using disposes at end.
    We're going to be saving to the Save action in the Movies Controller. 
