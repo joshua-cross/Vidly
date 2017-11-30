@@ -63,8 +63,31 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
+
+            //checking if the customer was edited or created, if it was created then it will have an Id of 0, else it's edited.
+            if(customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            //element aready exists.
+            else
+            {
+
+                //getting element from the database; using single here not singleOrDefault as if it's not found in db we 
+                //want it to throw an exception.
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                customerInDb.Name = customer.Name;
+                customerInDb.DOB = customer.DOB;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+
+
+
+            }
+
             //saving the changes that was made to the local memory.
             _context.Customers.Add(customer);
             //saving the changes that was made to the database.
