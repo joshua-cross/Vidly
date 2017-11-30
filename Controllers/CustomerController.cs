@@ -62,6 +62,18 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            //saving the changes that was made to the local memory.
+            _context.Customers.Add(customer);
+            //saving the changes that was made to the database.
+            _context.SaveChanges();
+
+            //redirecting the user away from this page.
+            return RedirectToAction("Index", "Customers");
+        }
+
         //getting the customer based on what ID has been sent through.
         [Route("Customers/Detail/{id}")]
         public ActionResult Detail(int id)
