@@ -51,6 +51,11 @@ namespace Vidly.Controllers
         }
 
 
+        public ActionResult New()
+        {
+            return View();
+        }
+
         //getting the customer based on what ID has been sent through.
         [Route("Customers/Detail/{id}")]
         public ActionResult Detail(int id)

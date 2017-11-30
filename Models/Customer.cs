@@ -17,6 +17,8 @@ namespace Vidly.Models
         public byte MembershipTypeId { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+
+        [Display(Name = "Date of Birth")]
         public DateTime? DOB { get; set; }
     }
 }
