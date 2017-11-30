@@ -28,7 +28,7 @@
         {
             //displaying each movie to the screen.
             <tr>
-                <td>@Html.ActionLink(@movie.Name, "Details", "Movies", new { id = i }, null)</td>
+                <td>@Html.ActionLink(@movie.Name, "Edit", "Movies", new { id = i }, null)</td>
                 <td>@movie.Genre.Name</td>
             </tr>
             i++;

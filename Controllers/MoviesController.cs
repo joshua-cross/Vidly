@@ -42,10 +42,12 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
+        /*
         public ActionResult Edit(int id)
         { 
             return Content("id = " + id);
         }
+        */
 
         //routing so we can reach this page by simply doing /Movie.
         [Route("Movie")]
@@ -96,6 +98,24 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new MovieFormViewModel
+            {
+                Movies = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
         [HttpPost]
         //action that saves the edits/adds an element in the database
         public ActionResult Save(MovieFormViewModel viewModel)
@@ -106,8 +126,6 @@ namespace Vidly.Controllers
             //setting the time the movie was added to now.
             movie.DateAddedToDatabase = DateTime.Now;
             //movie = DateTime.Now;
-            //adding the movie to the local memory.
-            _context.Movies.Add(movie);
 
             //movie.GenreId = 3;
 
@@ -116,9 +134,25 @@ namespace Vidly.Controllers
             //Console.WriteLine(movie.DateAddedToDatabase);
             //Console.WriteLine(movie.ReleaseDate);
 
+            //checking to see if the movie has an id, if it has then it's a new element.
+            if (movie.Id == 0)
+            {
+                //adding the movie to the local memory.
+                _context.Movies.Add(movie);
+            } else
+            {
+                //getting element from the database; using single here not singleOrDefault as if it's not found in db we 
+                //want it to throw an exception.
+                var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
+
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.Name = movie.Name;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.Stock = movie.Stock;
+            }
+
             try
             {
-                //checking to see if the movie has an id, if it has then it's a new element.
                 _context.SaveChanges();
             } catch (Exception error)
             {
