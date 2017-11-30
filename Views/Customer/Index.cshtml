@@ -33,7 +33,7 @@
         {
             //displaying each movie to the screen.
             <tr>
-                <td>@Html.ActionLink(@customer.Name, "Detail", "Customer", new { id = i }, null)</td>
+                <td>@Html.ActionLink(@customer.Name, "Edit", "Customer", new { id = i }, null)</td>
                 <td>@customer.MembershipType.DiscountName</td>
             </tr>
             i++;

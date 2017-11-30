@@ -105,6 +105,27 @@ namespace Vidly.Controllers
             return customers;
         }
 
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            //if the specified customer does not exist we're going to give the user a standard 404 error.
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            //Creating a NewCustomerViewModel as this is what the New Action takes as an input.
+            var viewModel = new NewCustomerViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            //going to the New page which we will use to edit the customers name.
+            return View("New", viewModel);
+        }
+
 
     }
 
