@@ -81,6 +81,52 @@ namespace Vidly.Controllers
             return View(movies);
         }
 
+
+        //creating an action for the movie form.
+        public ActionResult New()
+        {
+            //going to the IdentityModel and adding the genre DbSet.
+            var genres = _context.Genres.ToList();
+
+            //creating a MovieFormViewModel so we can display the genres and the Movies.
+            var viewModel = new MovieFormViewModel {
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+        [HttpPost]
+        //action that saves the edits/adds an element in the database
+        public ActionResult Save(MovieFormViewModel viewModel)
+        {
+
+            Movie movie = new Movie();
+            movie = viewModel.Movies;
+            //setting the time the movie was added to now.
+            movie.DateAddedToDatabase = DateTime.Now;
+            //movie = DateTime.Now;
+            //adding the movie to the local memory.
+            _context.Movies.Add(movie);
+
+            //movie.GenreId = 3;
+
+            Console.WriteLine(movie.GenreId);
+
+            //Console.WriteLine(movie.DateAddedToDatabase);
+            //Console.WriteLine(movie.ReleaseDate);
+
+            try
+            {
+                //checking to see if the movie has an id, if it has then it's a new element.
+                _context.SaveChanges();
+            } catch (Exception error)
+            {
+                Console.WriteLine(error);
+            }
+
+            return RedirectToAction("Index", "Movie");
+        }
         
         //routing to Movie/Detail/ID.
         [Route("Movie/Details/{id}")]

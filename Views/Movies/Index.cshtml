@@ -14,6 +14,11 @@
             <th>Movies</th>
             <th>Genre</th>
         </tr>
+
+        <div class="form-group">
+            @Html.ActionLink("Add", "New", "Movies", new { @class = "btn btn-primary" })
+        </div>
+
         @{
             int i = 1;
         }

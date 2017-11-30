@@ -89,7 +89,7 @@ namespace Vidly.Controllers
             }
 
             //saving the changes that was made to the local memory.
-            _context.Customers.Add(customer);
+            //_context.Customers.Add(customer);
             //saving the changes that was made to the database.
             _context.SaveChanges();
 
