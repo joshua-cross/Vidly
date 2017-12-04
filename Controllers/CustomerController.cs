@@ -66,6 +66,18 @@ namespace Vidly.Controllers
         public ActionResult Save(Customer customer)
         {
 
+            /*If what the user has entered is not valid we will take the user back to the form*/
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new NewCustomerViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("New", viewModel);
+            }
+
             //checking if the customer was edited or created, if it was created then it will have an Id of 0, else it's edited.
             if(customer.Id == 0)
             {
