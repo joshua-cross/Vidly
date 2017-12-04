@@ -92,6 +92,7 @@ namespace Vidly.Controllers
 
             //creating a MovieFormViewModel so we can display the genres and the Movies.
             var viewModel = new MovieFormViewModel {
+                Movies = new Movie(),
                 Genres = genres
             };
 
@@ -118,26 +119,34 @@ namespace Vidly.Controllers
 
         [HttpPost]
         //action that saves the edits/adds an element in the database
+        [ValidateAntiForgeryToken]
         public ActionResult Save(MovieFormViewModel viewModel)
         {
 
-            Movie movie = new Movie();
-            movie = viewModel.Movies;
-            //setting the time the movie was added to now.
-            movie.DateAddedToDatabase = DateTime.Now;
-            //movie = DateTime.Now;
-         
+
+
+            //Movie movie = new Movie();
+            var movie = viewModel.Movies;
+
+            var currId = movie.Id;
+
             //checking if the entered movie is valid.
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 var thisviewModel = new MovieFormViewModel
                 {
-                    Movies = new Movie(),
+                    Movies = movie,
                     Genres = _context.Genres.ToList()
                 };
 
+                Console.WriteLine(movie.Id);
                 return View("MovieForm", thisviewModel);
             }
+
+
+            //setting the time the movie was added to now.
+            movie.DateAddedToDatabase = DateTime.Now;
+            //movie = DateTime.Now;
 
             //movie.GenreId = 3;
 
