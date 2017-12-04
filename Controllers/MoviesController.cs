@@ -53,9 +53,9 @@ namespace Vidly.Controllers
         [Route("Movie")]
         public ActionResult Index(int? pageIndex, string sortBy)
         {
+ 
+            var movies = _context.Movies.Include(c => c.Genre).ToList();
 
-
-            var movies = _context.Movies.Include(c => c.Genre).ToList(); ;
 
             //setting the MovieViewModel to be the movies we have created here.
             var viewModel = new MoviesViewModel
@@ -126,6 +126,18 @@ namespace Vidly.Controllers
             //setting the time the movie was added to now.
             movie.DateAddedToDatabase = DateTime.Now;
             //movie = DateTime.Now;
+         
+            //checking if the entered movie is valid.
+            if(!ModelState.IsValid)
+            {
+                var thisviewModel = new MovieFormViewModel
+                {
+                    Movies = new Movie(),
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("MovieForm", thisviewModel);
+            }
 
             //movie.GenreId = 3;
 

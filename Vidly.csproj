@@ -271,6 +271,10 @@
     <Compile Include="Migrations\201711291533223_PopulateMovies.Designer.cs">
       <DependentUpon>201711291533223_PopulateMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712041451370_ChangedDatabaseToComplyWithNewFormRequirements.cs" />
+    <Compile Include="Migrations\201712041451370_ChangedDatabaseToComplyWithNewFormRequirements.Designer.cs">
+      <DependentUpon>201712041451370_ChangedDatabaseToComplyWithNewFormRequirements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -419,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711291533223_PopulateMovies.resx">
       <DependentUpon>201711291533223_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712041451370_ChangedDatabaseToComplyWithNewFormRequirements.resx">
+      <DependentUpon>201712041451370_ChangedDatabaseToComplyWithNewFormRequirements.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

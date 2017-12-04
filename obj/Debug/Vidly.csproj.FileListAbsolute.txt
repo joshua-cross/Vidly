@@ -98,3 +98,4 @@ C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.
 C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addedFormatToDOB1.resources
 C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddedNewElementsToMovies.resources
 C:\Users\josh\Documents\Visual Studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovies.resources
+C:\Users\josh\documents\visual studio 2015\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.ChangedDatabaseToComplyWithNewFormRequirements.resources

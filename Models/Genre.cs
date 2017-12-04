@@ -16,5 +16,8 @@ namespace Vidly.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        //the default ie. no genre selected is 0, so going to add byte to reflect that here.
+        public static readonly byte Unknown = 0;
     }
 }
